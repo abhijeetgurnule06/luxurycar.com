@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIG BOY TOYZ | Luxury Car Showroom</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #e0e4e8, #ffffff);
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #000000, #434343);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 3.5em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #FFD700;
+            font-family: 'Playfair Display', serif;
+            animation: slideDown 1s ease-in-out;
+        }
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: #FFD700;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        .hero-section {
+            background: url('https://i.ibb.co/BGCsVc7/luxury-car-bg.jpg') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.5);
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero-content {
+            z-index: 1;
+            max-width: 700px;
+            text-transform: uppercase;
+        }
+        .hero-content h2 {
+            font-size: 4em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            animation: fadeInUp 1.2s ease;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            letter-spacing: 3px;
+        }
+        .hero-content p {
+            font-size: 1.7em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.5s ease;
+            letter-spacing: 1px;
+        }
+        .hero-content a {
+            background: linear-gradient(145deg, #FFD700, #E5C100);
+            color: #000;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3em;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.3s;
+        }
+        .hero-content a:hover {
+            background-color: #fff;
+            transform: scale(1.05);
+        }
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .section-title {
+            text-align: center;
+            font-size: 3em;
+            color: #333;
+            margin: 50px 0 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .car {
+            background: #fff;
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #E0E0E0;
+        }
+        .car:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: #FFD700;
+        }
+        .car img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 15px;
+            margin-right: 30px;
+            transition: transform 0.3s ease;
+        }
+        .car img:hover {
+            transform: rotate(3deg) scale(1.05);
+        }
+        .car h2 {
+            font-size: 2.5em;
+            color: #000;
+            font-family: 'Playfair Display', serif;
+        }
+        .car p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .more-info {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        .offer-banner {
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            color: #000;
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 50px 0;
+            font-size: 1.8em;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 50px;
+            position: relative;
+            border-top: 2px solid #FFD700;
+        }
+        footer a {
+            color: #FFD700;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: white;
+        }
+        footer p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .hidden {
+            display: none;
+        }
+        .section {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BIG BOY TOYZ</h1>
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About Us</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Experience the Future of Luxury Cars</h2>
+            <p>Discover the most exclusive cars in the world at BIG BOY TOYZ.</p>
+            <a href="https://parivahan.gov.in" target="_blank">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Cars Section -->
+    <div class="container" id="home">
+        <h2 class="section-title">Our Collection</h2>
+        
+        <div class="car fade-in">
+            <img src="https://i.ibb.co/6R0f59v/audi2.jpg" alt="Audi A8">
+            <div>
+                <h2>Audi A8</h2>
+                <p>The Audi A8 is a luxurious sedan that combines advanced technology with a powerful engine and a spacious interior.</p>
+                <p><strong>Price:</strong> $100,000</p>
+                <p><strong>EMI Starting From:</strong> ₹90,000/month</p>
+                <a class="more-info" href="https://www.audi.com/en/models/a8.html" target="_blank">More Information</a>
+            </div>
+        </div>
+
+        <div class="car fade-in">
+            <img src="https://i.ibb.co/bRCwPGJ/car2.webp" alt="Bentley Continental GT">
+            <div>
+                <h2>Bentley Continental GT</h2>
+                <p>The Bentley Continental GT is known for its elegant design and high performance.</p>
+                <p><strong>Price:</strong> $120,000</p>
+                <p><strong>EMI Starting From:</strong> ₹1,00,000/month</p>
+                <a class="more-info" href="https://www.bentleymotors.com/en/models/continental-gt.html" target="_blank">More Information</a>
+            </div>
+        </div>
+
+        <div class="car fade-in">
+            <img src="https://i.ibb.co/pKDGzkL/car3.jpg" alt="BMW 7 Series">
+            <div>
+                <h2>BMW 7 Series</h2>
+                <p>The BMW 7 Series offers a refined ride, cutting-edge technology, and a luxurious interior.</p>
+                <p><strong>Price:</strong> $150,000</p>
+                <p><strong>EMI Starting From:</strong> ₹1,20,000/month</p>
+                <a class="more-info" href="https://www.bmw.com/en/bmw-models/7-series.html" target="_blank">More Information</a>
+            </div>
+        </div>
+
+        <div class="offer-banner">
+            Luxury Car Big Offer! Get exclusive discounts on select models this month! Don’t miss out.
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section hidden">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p>Welcome to BIG BOY TOYZ, your premier destination for luxury and exotic cars. Our mission is to provide an unparalleled selection of top-tier vehicles that embody elegance and performance.</p>
+            <p>With a dedicated team of automotive enthusiasts, we ensure every car meets the highest standards of quality. Our commitment to customer satisfaction drives us to offer personalized services tailored to your needs.</p>
+            <p>We have been in the luxury car business for over a decade, providing our clients with the finest vehicles and unparalleled service. Our showroom features a wide range of models, from the latest high-performance cars to rare vintage collectibles.</p>
+            <p>At BIG BOY TOYZ, we believe in creating a unique buying experience. Our expert consultants are available to guide you through the selection process, helping you find the perfect vehicle that matches your lifestyle.</p>
+            <p>We also offer exclusive financing options to make your dream car more accessible. Our dedicated after-sales service ensures that you receive the utmost care and maintenance for your vehicle.</p>
+            <p>Join us in experiencing the thrill of luxury driving and become a part of our family! Your satisfaction is our top priority, and we look forward to welcoming you to our showroom.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section hidden">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Feel free to reach out to us at:</p>
+            <p><strong>Email:</strong> contact@bigboytoyz.com</p>
+            <p><strong>Phone:</strong> +91 9876543210</p>
+            <p><strong>Address:</strong> Rambagh Layout, Untkhana, Nagpur, Maharashtra 440003</p>
+            <p>If you have any questions, suggestions, or feedback, please do not hesitate to contact us. We are here to help you!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>2024 BIG BOY TOYZ. All Rights Reserved.</p>
+        <p>
+            <a href="https://twitter.com">Twitter</a> |
+            <a href="https://facebook.com">Facebook</a> |
+            <a href="https://instagram.com">Instagram</a> |
+            <a href="https://linkedin.com">LinkedIn</a>
+        </p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('about').classList.add('hidden');
+            document.getElementById('contact').classList.add('hidden');
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
